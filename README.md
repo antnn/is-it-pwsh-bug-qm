@@ -1,5 +1,6 @@
 # Bug Summary: 
 ## Add-Type Failure in Elevated PowerShell Process
+`Start-Process powershell.exe -Credential $adminCredential` </br>
 Running on Microsoft Windows NT 10.0.20348.0
 
 ## Description:

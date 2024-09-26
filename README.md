@@ -1,6 +1,10 @@
 # Bug Summary: 
-## Add-Type Failure in Elevated PowerShell Process
-`Start-Process powershell.exe -Credential $adminCredential` </br>
+## Add-Type Failure in Elevated PowerShell Process: 
+```
+Add-Type -ReferencedAssemblies $scriptAssembly -TypeDefinition $sourceCode -Language $language -IgnoreWarnings
+# and
+Start-Process powershell.exe -Credential $adminCredential
+```
 Running on `Microsoft Windows NT 10.0.20348.0`</br> `Windows Server Eval 2022` (is it already fixed?)
 
 ## Description:

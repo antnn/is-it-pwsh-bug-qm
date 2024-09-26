@@ -5,7 +5,18 @@ Add-Type -ReferencedAssemblies $scriptAssembly -TypeDefinition $sourceCode -Lang
 # and
 Start-Process powershell.exe -Credential $adminCredential
 ```
-Running on `Microsoft Windows NT 10.0.20348.0`</br> `Windows Server Eval 2022` (is it already fixed?)
+Running on `Microsoft Windows NT 10.0.20348.0`</br> `Windows Server Eval 2022`
+```
+PSVersion                      5.1.20348.558
+PSEdition                      Desktop
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
+BuildVersion                   10.0.20348.558
+CLRVersion                     4.0.30319.42000
+WSManStackVersion              3.0
+PSRemotingProtocolVersion      2.3
+SerializationVersion           1.1.0.1
+```
+## It seems it fixed in pwsh core `PowerShell 7.4.5`
 
 ## Description:
 When running `Add-Type` command in an elevated `PowerShell` process started programmatically, it fails with an error related to file paths or assemblies not being found. The same code works fine when run directly in an admin PowerShell window launched from the GUI.

@@ -1,7 +1,7 @@
 # Bug Summary: 
 ## Add-Type Failure in Elevated PowerShell Process
 `Start-Process powershell.exe -Credential $adminCredential` </br>
-Running on Microsoft Windows NT 10.0.20348.0
+Running on Microsoft Windows NT 10.0.20348.0 (win2k22 server eval)
 
 ## Description:
 When running Add-Type command in an elevated PowerShell process started programmatically, it fails with an error related to file paths or assemblies not being found. The same code works fine when run directly in an admin PowerShell window launched from the GUI.

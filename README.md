@@ -31,7 +31,7 @@ When running `Add-Type` command in an elevated `PowerShell` process started prog
 ![pwsh_screeen](https://github.com/antnn/is-it-pwsh-bug-qm/blob/main/pwsh_bug.png?raw=true)
 
 # If I run pwsh .\sript.ps1 (powershell 7.4)
-which is similar to this isolated code `start-process -credential...` but calls `ConvertTo-SecureString` inside child powershell with admin rights. I get this
+which is similar to this isolated code `start-process -credential...` but calls `ConvertTo-SecureString` inside child powershell ([code form microsoft repo](https://github.com/microsoft/WindowsProtocolTestSuites/blob/797a4fa636a8eb0676f345950e2dddf2c394394e/CommonScripts/PromoteDomainController.ps1#L45)) with admin rights. I get this
 ```
 Error happeded while executing PromoteDomainController.ps1:The 'ConvertTo-SecureString' command was found in the
 module 'Microsoft.PowerShell.Security', but the module could not be loaded. For more information, run 'Import-Module

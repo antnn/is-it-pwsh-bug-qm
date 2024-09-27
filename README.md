@@ -44,4 +44,5 @@ At E:\toinstall\promote-domain-controller.ps1:79 char:9
    command was found in the module 'Microsoft.PowerShell.Security', but the module could not be loaded. For more info
   rmation, run 'Import-Module Microsoft.PowerShell.Security'.
 ```
-![](https://github.com/antnn/is-it-pwsh-bug-qm/blob/main/pwsh2.png?raw=true)
+
+![](https://raw.githubusercontent.com/antnn/is-it-pwsh-bug-qm/refs/heads/main/pwsh2.png)

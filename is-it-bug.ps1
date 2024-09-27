@@ -91,4 +91,3 @@ Key Points:
 "@
 Write-Output $info
 Start-ElevatedProcess
-exit

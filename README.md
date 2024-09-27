@@ -5,7 +5,7 @@ Add-Type -ReferencedAssemblies $scriptAssembly -TypeDefinition $sourceCode -Lang
 # and
 Start-Process powershell.exe -Credential $adminCredential
 ```
-Running on `Microsoft Windows NT 10.0.20348.0`</br> `Windows Server Eval 2022`
+Running on `Microsoft Windows NT 10.0.20348.0`</br> `Windows Server Eval 2022 with the latest KB5042881`
 ```
 PSVersion                      5.1.20348.558
 PSEdition                      Desktop

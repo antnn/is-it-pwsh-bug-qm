@@ -1,5 +1,5 @@
 # Bug Summary: 
-[See also](https://github.com/antnn/is-it-pwsh-bug-qm/blob/main/README.md#if-i-run-pwsh-sriptps1-powershell-74)
+[See also][(https://github.com/antnn/is-it-pwsh-bug-qm?tab=readme-ov-file#if-i-run-pwsh-sriptps1-powershell-74)
 ## Add-Type Failure in Elevated PowerShell Process: 
 ```
 Add-Type -ReferencedAssemblies $scriptAssembly -TypeDefinition $sourceCode -Language $language -IgnoreWarnings

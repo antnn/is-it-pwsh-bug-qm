@@ -28,3 +28,19 @@ When running `Add-Type` command in an elevated `PowerShell` process started prog
 4. Importantly, the code compiles and adds the type successfully in the root (first) process (the non-elevated PowerShell session that initiates the elevated process).
 
 ![pwsh_screeen](https://github.com/antnn/is-it-pwsh-bug-qm/blob/main/pwsh_bug.png?raw=true)
+
+## If I run pwsh .\sript.ps1 (powershell 7.4)
+which is similar to this isolated code `start-process -credential...` but calls `ConvertTo-SecureString` inside child powershell with admin rights. I get this
+```
+Error happeded while executing PromoteDomainController.ps1:The 'ConvertTo-SecureString' command was found in the
+module 'Microsoft.PowerShell.Security', but the module could not be loaded. For more information, run 'Import-Module
+Microsoft.PowerShell.Security'.
+At E:\toinstall\promote-domain-controller.ps1:79 char:9
++         throw "Error happeded while executing PromoteDomainController ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Error happeded ...hell.Security'.:String) [], RuntimeException
+    + FullyQualifiedErrorId : Error happeded while executing PromoteDomainController.ps1:The 'ConvertTo-SecureString'
+   command was found in the module 'Microsoft.PowerShell.Security', but the module could not be loaded. For more info
+  rmation, run 'Import-Module Microsoft.PowerShell.Security'.
+```
+![](https://github.com/antnn/is-it-pwsh-bug-qm/blob/main/pwsh2.png?raw=true)

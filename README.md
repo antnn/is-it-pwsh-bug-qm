@@ -1,4 +1,5 @@
 # Bug Summary: 
+[See also](https://github.com/antnn/is-it-pwsh-bug-qm/edit/main/README.md#if-i-run-pwsh-sriptps1-powershell-74)
 ## Add-Type Failure in Elevated PowerShell Process: 
 ```
 Add-Type -ReferencedAssemblies $scriptAssembly -TypeDefinition $sourceCode -Language $language -IgnoreWarnings
@@ -29,7 +30,7 @@ When running `Add-Type` command in an elevated `PowerShell` process started prog
 
 ![pwsh_screeen](https://github.com/antnn/is-it-pwsh-bug-qm/blob/main/pwsh_bug.png?raw=true)
 
-## If I run pwsh .\sript.ps1 (powershell 7.4)
+# If I run pwsh .\sript.ps1 (powershell 7.4)
 which is similar to this isolated code `start-process -credential...` but calls `ConvertTo-SecureString` inside child powershell with admin rights. I get this
 ```
 Error happeded while executing PromoteDomainController.ps1:The 'ConvertTo-SecureString' command was found in the

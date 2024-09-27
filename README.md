@@ -26,3 +26,5 @@ When running `Add-Type` command in an elevated `PowerShell` process started prog
 2. The Add-Type command works in a regular `PowerShell` session.
 3. The error suggests problems with file paths or assembly references.
 4. Importantly, the code compiles and adds the type successfully in the root (first) process (the non-elevated PowerShell session that initiates the elevated process).
+
+![pwsh_screeen](https://github.com/antnn/is-it-pwsh-bug-qm/blob/main/pwsh_bug.png?raw=true)

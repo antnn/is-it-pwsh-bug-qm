@@ -20,7 +20,6 @@ SerializationVersion           1.1.0.1
 ## Note: This issue appears to be resolved in PowerShell Core version 7.4.5.
 
 ## Description:
-Detailed Description:
 When executing the Add-Type command within an elevated PowerShell process that was initiated programmatically, the operation fails. The error messages typically relate to issues with file paths or an inability to locate necessary assemblies. Interestingly, the same code executes without issues when run directly in an administrative PowerShell window launched manually through the graphical user interface.
 
 ## Key Observations:

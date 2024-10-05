@@ -1,6 +1,6 @@
 [Also See below](https://github.com/antnn/is-it-pwsh-bug-qm?tab=readme-ov-file#if-i-run-pwsh-powershell-74)
 # Bug Summary: 
-## Add-Type Failure in Elevated PowerShell Process: 
+## Add-Type Failure in Programmatically Elevated PowerShell Process
 ```
 Add-Type -ReferencedAssemblies $scriptAssembly -TypeDefinition $sourceCode -Language $language -IgnoreWarnings
 # and
@@ -17,17 +17,17 @@ WSManStackVersion              3.0
 PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
-## It seems it fixed in pwsh core `PowerShell 7.4.5`
+## Note: This issue appears to be resolved in PowerShell Core version 7.4.5.
 
 ## Description:
-When running `Add-Type` command in an elevated `PowerShell` process started programmatically, it fails with an error related to file paths or assemblies not being found. The same code works fine when run directly in an admin PowerShell window launched from the GUI.
+Detailed Description:
+When executing the Add-Type command within an elevated PowerShell process that was initiated programmatically, the operation fails. The error messages typically relate to issues with file paths or an inability to locate necessary assemblies. Interestingly, the same code executes without issues when run directly in an administrative PowerShell window launched manually through the graphical user interface.
 
-## Key Points:
-1. The issue occurs when using `Start-Process` to launch an elevated PowerShell session.
-2. The Add-Type command works in a regular `PowerShell` session.
-3. The error suggests problems with file paths or assembly references.
-4. Importantly, the code compiles and adds the type successfully in the root (first) process (the non-elevated PowerShell session that initiates the elevated process).
-
+## Key Observations:
+1. The problem manifests when using `Start-Process` to launch an elevated `PowerShell` session.
+2. The Add-Type command functions correctly in a standard, non-elevated `PowerShell` session.
+3. Error messages suggest complications with file path resolution or assembly reference issues.
+4. It's crucial to note that the code successfully compiles and adds the type in the initial, non-elevated `PowerShell` session that initiates the elevated process.
 ![pwsh_screeen](https://github.com/antnn/is-it-pwsh-bug-qm/blob/main/pwsh_bug.png?raw=true)
 
 # Additional Findings:

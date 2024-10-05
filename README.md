@@ -30,10 +30,11 @@ When running `Add-Type` command in an elevated `PowerShell` process started prog
 
 ![pwsh_screeen](https://github.com/antnn/is-it-pwsh-bug-qm/blob/main/pwsh_bug.png?raw=true)
 
-# If I run pwsh 
-with [.\sript.ps1](https://github.com/antnn/win-setup-action-ansible/blob/c6cbfe42ba5d0d78c285a8abd776ccbd4b39c5c8/action_plugins/templates/start.ps1#L20) and with powershell 7.4
-That script is similar to this isolated code `start-process -credential...` but calls `ConvertTo-SecureString` inside child powershell ([code form microsoft repo](https://github.com/microsoft/WindowsProtocolTestSuites/blob/797a4fa636a8eb0676f345950e2dddf2c394394e/CommonScripts/PromoteDomainController.ps1#L45)) with admin rights.<br>
-I get this
+# If I run pwsh (powershell 7.4)
+with [.\sript.ps1](https://github.com/antnn/win-setup-action-ansible/blob/c6cbfe42ba5d0d78c285a8abd776ccbd4b39c5c8/action_plugins/templates/start.ps1#L20)
+That script is similar to code in this repo `start-process -credential...` <br>
+but calls `ConvertTo-SecureString` inside child powershell Promote to DC([code form microsoft repo](https://github.com/microsoft/WindowsProtocolTestSuites/blob/797a4fa636a8eb0676f345950e2dddf2c394394e/CommonScripts/PromoteDomainController.ps1#L45)) with admin rights.<br>
+#### I get this
 ```
 Error happeded while executing PromoteDomainController.ps1:The 'ConvertTo-SecureString' command was found in the
 module 'Microsoft.PowerShell.Security', but the module could not be loaded. For more information, run 'Import-Module

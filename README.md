@@ -28,20 +28,19 @@ When executing the Add-Type command within an elevated PowerShell process that w
 ![pwsh_screeen](https://github.com/antnn/is-it-pwsh-bug-qm/blob/main/pwsh_bug.png?raw=true)
 
 ## Note: This issue appears to be resolved in PowerShell Core version 7.4.5.
-but not the following:
-# Additional Findings:
-When running `Powershell (builtin) [Start-Process -Credential...] -> PowerShell 7.4 (pwsh)` with a [.\start.ps1](https://github.com/antnn/win-setup-action-ansible/blob/c6cbfe42ba5d0d78c285a8abd776ccbd4b39c5c8/action_plugins/templates/start.ps1#L20) similar to the one in the repository (using `Start-Process` with credentials), a different but potentially related issue occurs. Specifically, when calling `ConvertTo-SecureString` inside the child `PowerShell` process during a [domain controller promotion](https://github.com/microsoft/WindowsProtocolTestSuites/blob/797a4fa636a8eb0676f345950e2dddf2c394394e/CommonScripts/PromoteDomainController.ps1#L45), the following error is encountered:
 ```
-Error happeded while executing PromoteDomainController.ps1:The 'ConvertTo-SecureString' command was found in the
-module 'Microsoft.PowerShell.Security', but the module could not be loaded. For more information, run 'Import-Module
-Microsoft.PowerShell.Security'.
-At E:\toinstall\promote-domain-controller.ps1:79 char:9
-+         throw "Error happeded while executing PromoteDomainController ...
-+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : OperationStopped: (Error happeded ...hell.Security'.:String) [], RuntimeException
-    + FullyQualifiedErrorId : Error happeded while executing PromoteDomainController.ps1:The 'ConvertTo-SecureString'
-   command was found in the module 'Microsoft.PowerShell.Security', but the module could not be loaded. For more info
-  rmation, run 'Import-Module Microsoft.PowerShell.Security'.
+   $adminUserName = Get-LocalizedAdminAccountName
+    $PWord = ConvertTo-SecureString -String $adminPassword -AsPlainText -Force
+    $adminCredential = New-Object -TypeName System.Management.Automation.PSCredential `
+        -ArgumentList $adminUserName, $PWord
+    if (-not (Test-Administrator)) {
+           Start-Process pwsh -Credential $adminCredential `
+        -ArgumentList "-NoExit -ExecutionPolicy Bypass $PSCommandPath"
+            return
+    }
+}
+Start-ElevatedProcess
+if (Test-Administrator) {
+   & "C:\Users\IEUser\Documents\setup\promote-dc.ps1"
+}
 ```
-
-![](https://raw.githubusercontent.com/antnn/is-it-pwsh-bug-qm/refs/heads/main/pwsh2.png)

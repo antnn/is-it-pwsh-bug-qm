@@ -1,4 +1,4 @@
-[Also See below](https://github.com/antnn/is-it-pwsh-bug-qm?tab=readme-ov-file#if-i-run-pwsh-powershell-74)
+[Also See below](https://github.com/antnn/is-it-pwsh-bug-qm/tree/main?tab=readme-ov-file#additional-findings)
 # Bug Summary: 
 ## Add-Type Failure in Programmatically Elevated PowerShell Process
 ```

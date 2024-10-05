@@ -71,7 +71,7 @@ function Start-ElevatedProcess() {
         -ArgumentList $adminUserName, $PWord
     if (-not (Test-Administrator)) {
            Start-Process powershell.exe -Credential $adminCredential `
-        -ArgumentList "-NoExit -ExecutionPolicy Bypass ./is-it-pwsh-bug.ps1"
+        -ArgumentList "-NoExit -ExecutionPolicy Bypass  $PSCommandPath"
             return
     }
 }

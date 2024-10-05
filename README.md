@@ -32,7 +32,7 @@ When running `Add-Type` command in an elevated `PowerShell` process started prog
 
 # If I run pwsh 
 with [.\sript.ps1](https://github.com/antnn/win-setup-action-ansible/blob/c6cbfe42ba5d0d78c285a8abd776ccbd4b39c5c8/action_plugins/templates/start.ps1#L20) and with powershell 7.4
-which is similar to this isolated code `start-process -credential...` but calls `ConvertTo-SecureString` inside child powershell ([code form microsoft repo](https://github.com/microsoft/WindowsProtocolTestSuites/blob/797a4fa636a8eb0676f345950e2dddf2c394394e/CommonScripts/PromoteDomainController.ps1#L45)) with admin rights.<br>
+That script is similar to this isolated code `start-process -credential...` but calls `ConvertTo-SecureString` inside child powershell ([code form microsoft repo](https://github.com/microsoft/WindowsProtocolTestSuites/blob/797a4fa636a8eb0676f345950e2dddf2c394394e/CommonScripts/PromoteDomainController.ps1#L45)) with admin rights.<br>
 I get this
 ```
 Error happeded while executing PromoteDomainController.ps1:The 'ConvertTo-SecureString' command was found in the

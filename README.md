@@ -28,15 +28,10 @@ When executing the Add-Type command within an elevated PowerShell process that w
 
 ## Note: This issue appears to be resolved in PowerShell Core version 7.4.5.
 ```
-   $adminUserName = Get-LocalizedAdminAccountName
-    $PWord = ConvertTo-SecureString -String $adminPassword -AsPlainText -Force
-    $adminCredential = New-Object -TypeName System.Management.Automation.PSCredential `
-        -ArgumentList $adminUserName, $PWord
-    if (-not (Test-Administrator)) {
-           Start-Process pwsh -Credential $adminCredential `
-        -ArgumentList "-NoExit -ExecutionPolicy Bypass $PSCommandPath"
-            return
-    }
+if (-not (Test-Administrator)) {
+   Start-Process pwsh -Credential $adminCredential `
+   -ArgumentList "-NoExit -ExecutionPolicy Bypass $PSCommandPath"
+   return
 }
 Start-ElevatedProcess
 if (Test-Administrator) {

@@ -27,7 +27,7 @@ When executing the Add-Type command within an elevated PowerShell process that w
 ![pwsh_screeen](https://github.com/antnn/is-it-pwsh-bug-qm/blob/main/pwsh_bug.png?raw=true)
 
 ## Note: This issue appears to be resolved in PowerShell Core version 7.4.5.
-The fololowing works
+The following works
 ```
 if (-not (Test-Administrator)) {
    Start-Process pwsh -Credential $adminCredential `
